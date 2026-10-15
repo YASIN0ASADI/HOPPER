@@ -1,0 +1,22 @@
+# secrets
+.env
+*.env
+!.env.example
+
+# runtime data (created by the bot)
+monitor.db
+monitor.db-*
+emoji_map.json
+emoji_map.json.tmp
+
+# python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+
+# editors / OS
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,26 @@
+[Unit]
+Description=Recon Telegram Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=reconbot
+Group=reconbot
+WorkingDirectory=/bot
+EnvironmentFile=/etc/recon-bot.env
+ExecStart=/bot/venv/bin/python /bot/bot.py
+Restart=always
+RestartSec=5
+
+# سخت‌سازی: ربات فقط توی /bot اجازه‌ی نوشتن داره (برای monitor.db)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/bot
+ProtectKernelTunables=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target

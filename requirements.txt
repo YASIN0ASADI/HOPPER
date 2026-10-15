@@ -1,0 +1,4 @@
+aiogram>=3.28.2
+httpx>=0.27
+cryptography>=42
+matplotlib>=3.8
